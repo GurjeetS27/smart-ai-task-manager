@@ -41,7 +41,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
       console.log("📢 Fetching AI Suggested Time...");
   
       const response = await axios.post(
-        "http://localhost:5000/api/ai/suggest-time",
+        "http://3.84.103.28:5000/api/ai/suggest-time",
         {},
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -74,7 +74,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
   const fetchDashboardData = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:5000/api/tasks", {
+      const response = await axios.get("http://3.84.103.28:5000/api/tasks", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
 
@@ -110,7 +110,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/tasks", newTask, {
+      const res = await axios.post("http://3.84.103.28:5000/api/tasks", newTask, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setTasks(prev => [...prev, res.data]);
@@ -128,7 +128,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
   // Delete task
   const handleDeleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+      await axios.delete(`http://3.84.103.28:5000/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setTasks(prev => prev.filter(task => task._id !== taskId));
@@ -150,7 +150,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
     }
   
     try {
-      await axios.put(`http://localhost:5000/api/tasks/complete/${taskId}`, {
+      await axios.put(`http://3.84.103.28:5000/api/tasks/complete/${taskId}`, {
         completion_time: parseInt(time)
       }, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -169,7 +169,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
     if (!transcript) return alert("Please say something!");
   
     try {
-      const res = await axios.post("http://localhost:5000/api/ai/voice-task", {
+      const res = await axios.post("http://3.84.103.28:5000/api/ai/voice-task", {
         text: transcript
       }, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
