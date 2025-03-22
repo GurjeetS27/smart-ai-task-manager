@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("token");
     if (token) {
       axios
-        .get("https://3.84.103.28:5000/api/auth/me", {
+        .get("https://smart-ai-backend-527r.onrender.com/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {

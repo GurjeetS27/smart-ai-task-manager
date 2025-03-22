@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://3.84.103.28:5000/api/auth/register", formData);
+      await axios.post("https://smart-ai-backend-527r.onrender.com/api/auth/register", formData);
       navigate("/login");
     } catch (err) {
       alert("Registration failed!");
