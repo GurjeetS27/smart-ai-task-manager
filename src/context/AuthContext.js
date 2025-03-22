@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
   // ✅ Move `navigate` logic to Login.js instead of using it here
   const login = async (email, password) => {
     try {
-      const response = await axios.post("https://3.84.103.28:5000/api/auth/login", { email, password });
+      const response = await axios.post("https://smart-ai-backend-527r.onrender.com/api/auth/login", { email, password });
       localStorage.setItem("token", response.data.token);
       setUser(response.data.user);
     } catch (error) {
