@@ -280,7 +280,9 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
       <div className="mt-6 max-w-lg mx-auto p-4 rounded-lg shadow-lg"
           style={{ backgroundColor: darkMode ? "#1e1e1e" : "#f8f9fa", color: darkMode ? "#fff" : "#000" }}>
         <h3 className="text-lg font-semibold text-center mb-4">📊 Task Completion by Time</h3>
+        <div className="h-[300px]">
         <Bar data={getCompletionChartData()} options={{ responsive: true, maintainAspectRatio: false }} />
+        </div>
       </div>
 
       {/* Task List */}
