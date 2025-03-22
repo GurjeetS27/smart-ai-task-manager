@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("token");
     if (token) {
       axios
-        .get("http://3.84.103.28:5000/api/auth/me", {
+        .get("https://3.84.103.28:5000/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
   // ✅ Move `navigate` logic to Login.js instead of using it here
   const login = async (email, password) => {
     try {
-      const response = await axios.post("http://3.84.103.28:5000/api/auth/login", { email, password });
+      const response = await axios.post("https://3.84.103.28:5000/api/auth/login", { email, password });
       localStorage.setItem("token", response.data.token);
       setUser(response.data.user);
     } catch (error) {
