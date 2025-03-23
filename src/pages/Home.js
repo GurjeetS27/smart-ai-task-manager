@@ -9,33 +9,33 @@ const Home = () => {
   return (
     <div className={darkMode ? "dark bg-gray-900 text-white" : "bg-gray-100 text-gray-900"}>
       {/* Hero Section */}
-      <header className="min-h-[70vh] flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-blue-500 to-purple-600">
+      <header className="min-h-[70vh] flex flex-col items-center justify-center text-center p-6 sm:p-8 bg-gradient-to-br from-blue-500 to-purple-600">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl font-extrabold text-white flex items-center gap-2"
+          className="text-3xl sm:text-5xl font-extrabold text-white flex items-center gap-2 text-center"
         >
-          <Rocket size={40} /> Smart AI Task Manager
+          <Rocket size={32} /> Smart AI Task Manager
         </motion.h1>
-        <p className="text-lg text-white mt-3">Boost your productivity with AI-driven insights and smart task scheduling!</p>
-        
-        {/* CTA Buttons */}
+        <p className="text-base sm:text-lg text-white mt-3 max-w-md">
+          Boost your productivity with AI-driven insights and smart task scheduling!
+        </p>
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="mt-6 flex space-x-4"
+          className="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto"
         >
-          <Link to="/register" className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg text-lg font-bold flex items-center gap-2 shadow-lg transition">
+          <Link to="/register" className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg text-lg font-bold flex justify-center items-center gap-2 shadow-lg transition w-full sm:w-auto">
             🔥 Try Now - It's Free!
           </Link>
-          <Link to="/login" className="bg-white hover:bg-gray-200 text-blue-600 px-6 py-3 rounded-lg text-lg font-bold flex items-center gap-2 shadow-lg transition">
+          <Link to="/login" className="bg-white hover:bg-gray-200 text-blue-600 px-6 py-3 rounded-lg text-lg font-bold flex justify-center items-center gap-2 shadow-lg transition w-full sm:w-auto">
             🔑 Login
           </Link>
         </motion.div>
       </header>
-
       {/* Features Section */}
       <section className="py-12 text-center">
         <h2 className="text-3xl font-bold mb-6">Why Choose Smart AI Task Manager? 🤖</h2>
