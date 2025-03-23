@@ -14,7 +14,7 @@ const Home = () => {
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-3xl sm:text-5xl font-extrabold text-white flex items-center gap-2 text-center"
+          className="text-3xl sm:text-5xl font-extrabold text-white text-center flex flex-col sm:flex-row items-center justify-center gap-2"
         >
           <Rocket size={32} /> Smart AI Task Manager
         </motion.h1>
